@@ -5,10 +5,10 @@ You can use this Microsoft Defender for Identity Log Analyzer to view the log fi
 - Descending order of the log entries so the newest entries are on top.
 - A filter for Errors, Warning, Information and Debug for easy troubleshooting.
 - A description field on what steps to take at certain messages. The option is there, but no description is added so far.
+- An export button to export the latest log files for easy sending or storing.
 
 What I will add soon is:
 
-- An export button to export the latest log files for easy sending or storing.
 - Adding descriptions at common messages with more information on how to solve the issue.
 
 For more information, please check: https://learn.microsoft.com/en-us/defender-for-identity/troubleshooting-using-logs
