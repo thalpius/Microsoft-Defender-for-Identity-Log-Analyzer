@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDashboard));
             this.pnlMenu = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.btnSensorUpdaterErrors = new System.Windows.Forms.Button();
             this.btnSensorErrors = new System.Windows.Forms.Button();
@@ -93,6 +94,7 @@
             // pnlMenu
             // 
             this.pnlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnlMenu.Controls.Add(this.btnExport);
             this.pnlMenu.Controls.Add(this.SidePanel);
             this.pnlMenu.Controls.Add(this.btnSensorUpdaterErrors);
             this.pnlMenu.Controls.Add(this.btnSensorErrors);
@@ -106,6 +108,24 @@
             this.pnlMenu.Name = "pnlMenu";
             this.pnlMenu.Size = new System.Drawing.Size(191, 674);
             this.pnlMenu.TabIndex = 0;
+            // 
+            // btnExport
+            // 
+            this.btnExport.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Image = global::Microsoft_Defender_for_Identity_Log_Analyzer.Properties.Resources.export_25px;
+            this.btnExport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExport.Location = new System.Drawing.Point(12, 474);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(166, 44);
+            this.btnExport.TabIndex = 8;
+            this.btnExport.Text = "  Export";
+            this.btnExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExport.UseVisualStyleBackColor = false;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // SidePanel
             // 
@@ -786,6 +806,7 @@
         private System.Windows.Forms.RadioButton radioBtnSensorErrorsErrors;
         private System.Windows.Forms.RichTextBox richTxtBoxLog;
         private System.Windows.Forms.RichTextBox richTxtBoxDashboard;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 

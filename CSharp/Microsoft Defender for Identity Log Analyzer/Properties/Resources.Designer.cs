@@ -73,6 +73,16 @@ namespace Microsoft_Defender_for_Identity_Log_Analyzer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap export_25px {
+            get {
+                object obj = ResourceManager.GetObject("export 25px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sensor_25px {
             get {
                 object obj = ResourceManager.GetObject("sensor 25px", resourceCulture);

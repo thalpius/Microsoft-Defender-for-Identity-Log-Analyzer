@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -681,6 +682,37 @@ namespace Microsoft_Defender_for_Identity_Log_Analyzer
             {
                 richTxtBoxLog.Clear();
                 richTxtBoxLog.AppendText("Add comments to resolve the issue");
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            string date = now.ToString("yyyy-MM-dd_hh-mm-ss");
+            MySettings settings = MySettings.Load();
+            var latestVersion = Directory.GetDirectories(@"C:\Program Files\Azure Advanced Threat Protection Sensor\").OrderByDescending(x => x).FirstOrDefault();
+            var version = new DirectoryInfo(latestVersion).Name;
+
+            string exportLogFiles = "MDISensorLogs_" + date + ".zip";
+
+            string logSensor = settings.sensor.Replace("VERSION", version);
+            string logSensorErrors = settings.sensorErrors.Replace("VERSION", version);
+            string logSensorUpdater = settings.sensorUpdater.Replace("VERSION", version);
+            string logSensorUpdaterErrors = settings.sensorUpdaterErrors.Replace("VERSION", version);
+
+            if (!(File.Exists(exportLogFiles)))
+            {
+                using (FileStream zipToOpen = new FileStream(exportLogFiles, FileMode.Create))
+                {
+                    using (ZipArchive archive = new ZipArchive(zipToOpen, ZipArchiveMode.Update))
+                    {
+                        ZipArchiveEntry addSensor = archive.CreateEntryFromFile(logSensor, "Microsoft.Tri.Sensor.log");
+                        ZipArchiveEntry addSensorErrors = archive.CreateEntryFromFile(logSensorErrors, "Microsoft.Tri.Sensor-Errors.log");
+                        ZipArchiveEntry addSensorUpdater = archive.CreateEntryFromFile(logSensorUpdater, "Microsoft.Tri.Sensor.Updater.log");
+                        ZipArchiveEntry addSensorUpdaterErrors = archive.CreateEntryFromFile(logSensorUpdaterErrors, "Microsoft.Tri.Sensor.Updater-Errors.log");
+                    }
+                }
+
             }
         }
     }
