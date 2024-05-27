@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> "This repo is now in 'Blue Screen' mode—archived and frozen in time!"
+
 # Microsoft Defender for Identity Log Analyzer
 
 You can use this Microsoft Defender for Identity Log Analyzer to view the log files used by Microsoft Defender for Identity. The tools offers the following featured:
